@@ -1,8 +1,7 @@
 <template>
-  <div class="v-form-page">
+  <div class="v-view-page">
     <AppEditor />
     <AppPreview />
-    <button>close</button>
   </div>
 </template>
 
@@ -11,10 +10,13 @@ import AppEditor from "../components/AppEditor";
 import AppPreview from "../components/AppPreview";
 
 export default {
-  name: "FormPage",
+  name: "ViewAppPage",
   components: {
     AppEditor,
     AppPreview
+  },
+  data() {
+    return {};
   }
 };
 </script>
