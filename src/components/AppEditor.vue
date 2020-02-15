@@ -49,127 +49,35 @@
 
 <script>
 export default {
-  props: ["app-info"],
+  props: ['app-info'],
   methods: {
     changeAppName(event) {
-      let appName = event.target.value;
-
+      const appName = event.target.value;
+      // eslint-disable-next-line
       console.log(appName);
-      this.$emit("changeAppName", appName);
+      this.$emit('changeAppName', appName);
     },
     changeAppIcon(event) {
-      let file = event.target.files[0];
-      let appIconFileType = file.type;
-      let appIcon = file.name;
-      let appIconFile = URL.createObjectURL(file);
-
+      const file = event.target.files[0];
+      const appIconFileType = file.type;
+      const appIcon = file.name;
+      const appIconFile = URL.createObjectURL(file);
+      // eslint-disable-next-line
       console.log(file, appIconFileType, appIcon, appIconFile);
       // this.$emit('changeAppIcon', {appIconFileType, appIcon, appIconFile});
     },
     changeAppBg(event) {
-      let appBg = event.target.value;
-
+      const appBg = event.target.value;
+      // eslint-disable-next-line
       console.log(appBg);
       // this.$emit('changeAppBg', appBg);
     },
     changeAppCategory(event) {
-      let appCategory = event.target.value;
-
+      const appCategory = event.target.value;
+      // eslint-disable-next-line
       console.log(appCategory);
       // this.$emit('changeAppBg', appCategory);
-    }
-  }
+    },
+  },
 };
 </script>
-
-
-<style lang="scss">
-@import "../assets/scss/main";
-.v-editor {
-  label {
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    display: block;
-    font-family: $secondary-font;
-    font-size: 14px;
-  }
-  input,
-  select {
-    margin: 1rem 0;
-    width: 100%;
-  }
-  input[type="text"],
-  select {
-    padding: 0.75rem;
-    border: 0.05rem solid $gray;
-    border-radius: 5px;
-    background-color: $white;
-    font-size: 12px;
-    &::placeholder {
-      color: $secondary-color;
-    }
-  }
-  select {
-    color: $secondary-color;
-  }
-  input[type="file"],
-  input[type="color"] {
-    display: none;
-  }
-  &__fieldset {
-    margin: 2rem 0;
-  }
-
-  .v-file-label {
-    display: block;
-  }
-
-  .v-mock-input {
-    margin: 1rem 0;
-    width: calc(65% - 5px);
-    display: inline-block;
-    background-color: $white;
-    padding: 0.8rem;
-    color: $secondary-color;
-    font-size: 12px;
-    border: 0.05rem solid $gray;
-    border-radius: 5px;
-    background-color: $white;
-    font-size: 12px;
-    margin-right: 5px;
-    font-family: $primary-font;
-    text-transform: initial;
-    letter-spacing: 0;
-    &.color-picker {
-      width: 70%;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-left: none;
-      margin: 0;
-    }
-  }
-
-  .v-mock-btn {
-    margin: 1rem 0;
-    width: 35%;
-    display: inline-block;
-    background-color: $secondary-color;
-    padding: 0.8rem;
-    border: 0.05rem solid $gray;
-    border-radius: 5px;
-    font-size: 12px;
-    text-align: center;
-    color: $white;
-    font-family: $primary-font;
-    letter-spacing: 0;
-    font-weight: bold;
-    &.color-picker {
-      width: 30%;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: none;
-      background-color: $dark-gray;
-    }
-  }
-}
-</style>

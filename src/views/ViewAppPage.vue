@@ -6,17 +6,17 @@
 </template>
 
 <script>
-import AppEditor from "../components/AppEditor";
-import AppPreview from "../components/AppPreview";
+import AppEditor from '@/components/AppEditor';
+import AppPreview from '@/components/AppPreview';
 
 export default {
-  name: "ViewAppPage",
+  name: 'ViewAppPage',
   components: {
     AppEditor,
-    AppPreview
+    AppPreview,
   },
   data() {
     return {};
-  }
+  },
 };
 </script>

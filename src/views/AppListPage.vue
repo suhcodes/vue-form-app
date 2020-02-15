@@ -8,15 +8,15 @@
 </template>
 
 <script>
-import AppList from "../components/AppList";
+import AppList from '@/components/AppList';
 
 export default {
-  name: "AppListPage",
+  name: 'AppListPage',
   components: {
-    AppList
+    AppList,
   },
   data() {
     return {};
-  }
+  },
 };
 </script>

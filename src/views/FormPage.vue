@@ -7,28 +7,28 @@
 </template>
 
 <script>
-import AppEditor from "../components/AppEditor";
-import AppPreview from "../components/AppPreview";
-import CloseButton from "../components/CloseButton";
+import AppEditor from '@/components/AppEditor';
+import AppPreview from '@/components/AppPreview';
+import CloseButton from '@/components/CloseButton';
 
 export default {
-  name: "FormPage",
+  name: 'FormPage',
   components: {
     AppEditor,
     AppPreview,
-    CloseButton
+    CloseButton,
   },
   data() {
     return {
       appInfo: {
-        name: "App Name",
-        icon: "App Icon",
+        name: 'App Name',
+        icon: 'App Icon',
         iconFile: File,
-        iconFileType: "",
-        bg: "",
-        category: "Category"
-      }
+        iconFileType: '',
+        bg: '',
+        category: 'Category',
+      },
     };
-  }
+  },
 };
 </script>
