@@ -6,14 +6,23 @@
         <img src alt />
       </div>
       <div class="v-preview__card__info">
-        <h3>App Name</h3>
-        <p>App Category</p>
+        <h3>{{ appInfo.name }}</h3>
+        <p>{{ appInfo.category }}</p>
         <small>New App</small>
       </div>
     </div>
     <button>Save App</button>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["app-info"],
+  data() {
+    return {};
+  }
+};
+</script>
 
 <style lang="scss">
 @import "../assets/scss/main";

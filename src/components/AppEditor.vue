@@ -12,8 +12,7 @@
             name="appName"
             id="appName"
             placeholder="Enter App Dysplay Name"
-            @keyup="changeAppName()"
-            v-model="appName"
+            @keyup="changeAppName"
           />
         </div>
         <div class="v-editor__fieldset__input-group">
@@ -34,12 +33,7 @@
         </div>
         <div class="v-editor__fieldset__input-group">
           <label for="appCategory">Select a Category</label>
-          <select
-            name="appCategory"
-            id="appCategory"
-            @change="changeAppCategory()"
-            v-model="appCategory"
-          >
+          <select name="appCategory" id="appCategory" @change="changeAppCategory">
             <optgroup>
               <option value="Default">Select</option>
               <option value="Category 1">Category 1</option>
@@ -55,25 +49,35 @@
 
 <script>
 export default {
-  props: {
-    appName: { type: String },
-    appIcon: { type: String },
-    appIconFile: { type: File },
-    appBg: { type: String },
-    appCategory: { type: String }
-  },
+  props: ["app-info"],
   methods: {
-    changeAppName() {},
+    changeAppName(event) {
+      let appName = event.target.value;
+
+      console.log(appName);
+      this.$emit("changeAppName", appName);
+    },
     changeAppIcon(event) {
       let file = event.target.files[0];
-      this.appIcon = file.name;
-      this.appIconFile = URL.createObjectURL(file);
+      let appIconFileType = file.type;
+      let appIcon = file.name;
+      let appIconFile = URL.createObjectURL(file);
+
+      console.log(file, appIconFileType, appIcon, appIconFile);
+      // this.$emit('changeAppIcon', {appIconFileType, appIcon, appIconFile});
     },
     changeAppBg(event) {
-      this.appBg = event.target.value;
-      this.$emit("changeAppBg", this.appBg);
+      let appBg = event.target.value;
+
+      console.log(appBg);
+      // this.$emit('changeAppBg', appBg);
     },
-    changeAppCategory() {}
+    changeAppCategory(event) {
+      let appCategory = event.target.value;
+
+      console.log(appCategory);
+      // this.$emit('changeAppBg', appCategory);
+    }
   }
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div id="form" class="v-form-page">
-    <CloseButton :greeting="greeting" />
-    <AppEditor />
-    <AppPreview />
+    <CloseButton />
+    <AppEditor :app-info="appInfo" @changeAppName="appInfo.AppName = $event" />
+    <AppPreview :app-info="appInfo" />
   </div>
 </template>
 
@@ -20,7 +20,14 @@ export default {
   },
   data() {
     return {
-      greeting: "Hello world!"
+      appInfo: {
+        name: "App Name",
+        icon: "App Icon",
+        iconFile: File,
+        iconFileType: "",
+        bg: "",
+        category: "Category"
+      }
     };
   }
 };
