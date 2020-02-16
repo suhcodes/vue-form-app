@@ -53,6 +53,7 @@
       font-family: $primary-font;
       text-transform: initial;
       letter-spacing: 0;
+      white-space: nowrap;
       &.color-picker {
         width: 70%;
         border-top-right-radius: 0;

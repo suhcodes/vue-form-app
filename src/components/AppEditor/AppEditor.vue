@@ -18,7 +18,7 @@
         <div class="v-editor__fieldset__input-group">
           <label for="appIcon">
             <span class="v-file-label">App Icon</span>
-            <span class="v-mock-input">Select a File</span>
+            <span class="v-mock-input">{{ appIcon }}</span>
             <span class="v-mock-btn">Select a File</span>
           </label>
           <input type="file" name="appIcon" id="appIcon" @change="changeAppIcon" />
@@ -27,7 +27,7 @@
           <label for="iconBackground">
             <span class="v-file-label">Icon's Background Color</span>
             <span class="v-mock-input color-picker">Pick a Color</span>
-            <span class="v-mock-btn color-picker">Pick a Color</span>
+            <span class="v-mock-btn color-picker">{{ appBg }}</span>
           </label>
           <input type="color" name="iconBackground" id="iconBackground" @change="changeAppBg" />
         </div>
@@ -50,6 +50,12 @@
 <script>
 export default {
   props: ['app-info'],
+  data() {
+    return {
+      appIcon: 'Select a File',
+      appBg: 'Pick a Color',
+    };
+  },
   methods: {
     changeAppName(event) {
       const appName = event.target.value;
@@ -62,12 +68,17 @@ export default {
       const appIconFileType = file.type;
       const appIcon = file.name;
       const appIconFile = URL.createObjectURL(file);
+
+      this.appIcon = file.name;
+
       // eslint-disable-next-line
       console.log(file, appIconFileType, appIcon, appIconFile);
       // this.$emit('changeAppIcon', {appIconFileType, appIcon, appIconFile});
     },
     changeAppBg(event) {
       const appBg = event.target.value;
+
+      this.appBg = appBg;
       // eslint-disable-next-line
       console.log(appBg);
       // this.$emit('changeAppBg', appBg);
@@ -81,3 +92,8 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  @import '@/styles/main.scss';
+  @import './AppEditor.scss';
+</style>

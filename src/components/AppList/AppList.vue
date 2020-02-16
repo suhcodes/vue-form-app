@@ -9,3 +9,9 @@
     <button>New App</button>
   </div>
 </template>
+
+
+<style lang="scss">
+  @import '@/styles/main.scss';
+  @import './AppList.scss';
+</style>

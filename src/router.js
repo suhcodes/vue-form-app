@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import FormPage from './views/FormPage.vue';
+import EditorPage from './views/EditorPage.vue';
 import AppListPage from './views/AppListPage.vue';
 import ViewAppPage from './views/ViewAppPage.vue';
 
@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/',
       name: 'New App',
-      component: FormPage,
+      component: EditorPage,
     },
     {
       path: '/list',
