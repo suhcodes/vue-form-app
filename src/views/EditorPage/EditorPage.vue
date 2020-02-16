@@ -1,19 +1,23 @@
 <template>
-  <div id="editor" class="v-editor-page">
+  <div id="editor" class="v-editor-page" :class="{ 'v-float-preview' : floatPreview }">
     <AppCloseButton
-      @clickedToClose="appModalCheck = $event"
+      @clickedToClose="AppExitModalCheck = $event"
     />
     <AppEditor
       @changeAppName="appInfo.name = $event"
       @changeAppIcon="appInfo.iconFile = $event"
       @changeAppBg="appInfo.bg = $event"
       @changeAppCategory="appInfo.category = $event"
+      @floatPreview="floatPreview = $event"
     />
-    <AppPreview :app-info="appInfo" />
-    <AppModal
-      v-if="appModalCheck"
-      :modal-check="appModalCheck"
-      @cancelAction="appModalCheck = $event"
+    <AppPreview
+      :app-info="appInfo"
+      :float-preview="floatPreview"
+    />
+    <AppExitModal
+      v-if="AppExitModalCheck"
+      :modal-info-text="inf"
+      @cancelAction="AppExitModalCheck = $event"
     />
   </div>
 </template>
@@ -22,7 +26,7 @@
 import AppEditor from '@/components/AppEditor/AppEditor.vue';
 import AppPreview from '@/components/AppPreview/AppPreview.vue';
 import AppCloseButton from '@/components/AppCloseButton/AppCloseButton.vue';
-import AppModal from '@/components/AppModal/AppModal.vue';
+import AppExitModal from '@/components/AppExitModal/AppExitModal.vue';
 
 export default {
   name: 'EditorPage',
@@ -30,7 +34,7 @@ export default {
     AppEditor,
     AppPreview,
     AppCloseButton,
-    AppModal,
+    AppExitModal,
   },
   data() {
     return {
@@ -41,13 +45,10 @@ export default {
         category: '',
         inputChecker: false,
       },
-      appModalCheck: false,
+      AppExitModalCheck: false,
+      floatPreview: false,
+      dataSavedModalCheck: false,
     };
-  },
-  methods: {
-    inputValidator() {
-      // this.inputChecker = this.inputChecker ? true : false;
-    },
   },
 };
 </script>

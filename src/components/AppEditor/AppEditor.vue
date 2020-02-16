@@ -5,7 +5,7 @@
     </div>
     <div class="v-editor__fieldset">
       <fieldset>
-        <div class="v-editor__fieldset__input-group">
+        <div class="v-editor__fieldset__input-group" id="inputName">
           <label for="appName">App Name</label>
           <input
             type="text"
@@ -17,7 +17,7 @@
             @focus="floatPreview"
           />
         </div>
-        <div class="v-editor__fieldset__input-group">
+        <div class="v-editor__fieldset__input-group" id="inputIcon">
           <label for="appIcon">
             <span class="v-file-label">App Icon</span>
             <div class="v-mock">
@@ -32,11 +32,11 @@
             @change="changeAppIcon"
           />
         </div>
-        <div class="v-editor__fieldset__input-group">
+        <div class="v-editor__fieldset__input-group" id="inputBackground">
           <label for="iconBackground">
             <span class="v-file-label">Icon's Background Color</span>
             <div class="v-mock">
-              <span class="v-mock__input color-picker">Pick a Color</span>
+              <span class="v-mock__input color-picker" id="appBackground">Pick a Color</span>
               <span class="v-mock__btn color-picker">{{ appBg || '#333' }}</span>
             </div>
           </label>
@@ -47,7 +47,7 @@
             @change="changeAppBg"
           />
         </div>
-        <div class="v-editor__fieldset__input-group">
+        <div class="v-editor__fieldset__input-group" id="inputCategory">
           <label for="appCategory">Select a Category</label>
           <select name="appCategory" id="appCategory" @change="changeAppCategory">
             <optgroup>

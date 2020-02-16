@@ -31,6 +31,18 @@
   }
   &__fieldset {
     margin: 2rem 0;
+    &__input-group::after {
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      content: '';
+      color: $err;
+      font-size: 10px;
+      position: absolute;
+      text-transform: none;
+      letter-spacing: 0;
+      right: 0;
+      bottom: .25rem;
+    }
   }
 
   .v-file-label {
@@ -85,6 +97,13 @@
       border-bottom-left-radius: 0;
       border-left: none;
       background-color: $primary-color;
+    }
+  }
+  .err {
+    position: relative;
+    &::after {
+      content: 'This field is required';
+      opacity: 1;
     }
   }
   @include desktop {

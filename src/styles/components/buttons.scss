@@ -12,4 +12,14 @@
   &:hover {
       opacity: 1;
   }
+  &.v-disabled {
+    background-color: $gray;
+    @include desktop {
+      background-color: $primary-color;
+      cursor: not-allowed;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
 }
