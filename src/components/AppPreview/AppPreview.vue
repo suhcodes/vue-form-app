@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   props: {
     appInfo: {
@@ -37,15 +39,6 @@ export default {
       else if (!this.appInfo.category) this.alertErr('Category');
       else this.postRequest();
     },
-    postRequest() {
-      const data = {
-        name: this.appInfo.name,
-        icon: this.appInfo.iconFile,
-        category: this.appInfo.category,
-      };
-      console.log('data sending...', data);
-      this.$emit('dataSavedSuccess', true);
-    },
     alertErr(str) {
       const el = document.getElementById(`input${str}`);
       el.classList.add('err');
@@ -53,6 +46,18 @@ export default {
       setTimeout(() => {
         el.classList.remove('err');
       }, 5000);
+    },
+    async postRequest() {
+      const data = {
+        name: this.appInfo.name,
+        icon: this.appInfo.iconFile,
+        background: this.appInfo.bg,
+        category: this.appInfo.category,
+      };
+      const url = 'http://localhost:3000/list';
+      const res = await axios.post(url, data);
+      this.$emit('dataSavedSuccess', true);
+      console.log(res);
     },
   },
 };

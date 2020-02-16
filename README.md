@@ -30,5 +30,10 @@ npm run lint
 npm run test:e2e
 ```
 
+### Run json-server
+```
+json-server public/db.json
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

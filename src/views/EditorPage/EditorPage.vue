@@ -16,7 +16,6 @@
     />
     <AppExitModal
       v-if="AppExitModalCheck"
-      :modal-info-text="inf"
       @cancelAction="AppExitModalCheck = $event"
     />
   </div>

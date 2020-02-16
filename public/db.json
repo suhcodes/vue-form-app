@@ -17,6 +17,19 @@
       "name": "app 3",
       "icon": "@/assets/logo.png",
       "category": "Category 3"
+    },
+    {
+      "name": "app 4",
+      "icon": "blob:http://localhost:8080/0fe0ce1b-f7f4-458a-b0f5-ee0aee5e5056",
+      "category": "Category 2",
+      "id": 3
+    },
+    {
+      "name": "App 5",
+      "icon": "blob:http://localhost:8080/c24058c4-d5b0-4886-9964-44ca74bef6f9",
+      "background": "#12ed08",
+      "category": "Category 2",
+      "id": 4
     }
   ]
 }
