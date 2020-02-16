@@ -1,0 +1,18 @@
+.v-list-page {
+  max-width: 968px;
+  background-color: $light-gray;
+  padding: 1rem;
+  min-height: 100vh;
+  @include desktop {
+    margin: 5rem auto;
+    padding: 1rem;
+    position: relative;
+    border-radius: .5rem;
+    border: 1px solid $gray;
+    min-height: auto;
+    height: calc(100vh - 10rem);
+    button {
+      max-width: 20rem;
+    }
+  }
+}

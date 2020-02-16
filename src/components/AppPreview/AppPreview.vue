@@ -11,7 +11,7 @@
         <small>New App</small>
       </div>
     </div>
-    <button>Save App</button>
+    <button class="btn">Save App</button>
   </div>
 </template>
 

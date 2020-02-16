@@ -1,0 +1,45 @@
+.v-modal {
+  max-width: 600px;
+  margin: 7rem 1rem;
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 5px;
+  position: relative;
+  &__header {
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2rem;
+      background: transparent;
+      padding: 0;
+      width: 2rem;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  }
+  &__body {
+    text-align: center;
+    padding: 1rem 0;
+    p {
+      line-height: 24px;
+      font-size: 18px;
+      padding: .5rem 0;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 45%;
+      &.btn-cancel {
+          opacity: 1;
+      }
+    }
+  }
+
+  @include desktop {
+    margin: 7rem auto;
+    min-height: 60vh;
+  }
+}

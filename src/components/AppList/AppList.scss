@@ -1,0 +1,23 @@
+.v-list {
+  h2 {
+    text-transform: uppercase;
+    font-family: $secondary-font;
+  }
+  &__ul {
+    padding: 2rem 0;
+    overflow-y: auto;
+    &-item {
+      margin: 1rem 0;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid $gray;
+      background-color: $lighter-gray;
+    }
+  }
+  @include desktop {
+    &__ul {
+      min-height: calc(100vh - 17rem);
+    }
+  }
+}

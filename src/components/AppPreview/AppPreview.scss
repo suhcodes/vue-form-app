@@ -7,15 +7,6 @@
     letter-spacing: 1px;
     font-family: $secondary-font;
   }
-  button {
-    width: 100%;
-    background-color: $secondary-color;
-    font-family: $secondary-font;
-    color: $white;
-    padding: 0.75rem;
-    text-transform: uppercase;
-    border-radius: 5px;
-  }
   &__card {
     display: flex;
     border: 0.05rem solid $gray;
@@ -26,6 +17,7 @@
       width: 100px;
       height: 100px;
       background-color: $dark-gray;
+      transition: 0.3s ease-in-out;
       span {
         margin: 10px auto;
         background-color: $white;

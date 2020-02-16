@@ -1,19 +1,19 @@
 .v-editor-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 968px;
-    background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 968px;
+  background-color: $light-gray;
+  padding: 1rem;
+  min-height: 100vh;
+  
+  @include desktop {
+    flex-direction: row;
+    margin: 5rem auto;
     padding: 1rem;
-    min-height: 100vh;
-    
-    @include desktop {
-        flex-direction: row;
-        margin: 5rem auto;
-        padding: 1rem;
-        position: relative;
-        border-radius: .5rem;
-        border: 1px solid $gray;
-        min-height: auto;
-    }
+    position: relative;
+    border-radius: .5rem;
+    border: 1px solid $gray;
+    min-height: auto;
+  }
 }

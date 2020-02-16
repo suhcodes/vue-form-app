@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <ul>
-      <li>App Name</li>
-      <li>App Name</li>
-      <li>App Name</li>
-      <li>App Name</li>
+  <div class="v-list">
+    <h2>Welcome to your apps list!</h2>
+    <ul class="v-list__ul">
+      <li class="v-list__ul-item">App Name</li>
+      <li class="v-list__ul-item">App Name</li>
+      <li class="v-list__ul-item">App Name</li>
+      <li class="v-list__ul-item">App Name</li>
     </ul>
-    <button>New App</button>
   </div>
 </template>
 

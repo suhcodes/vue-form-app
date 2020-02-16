@@ -8,6 +8,7 @@
       @changeAppCategory="appInfo.category = $event"
     />
     <AppPreview :app-info="appInfo" />
+    <AppModal />
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 import AppEditor from '@/components/AppEditor/AppEditor.vue';
 import AppPreview from '@/components/AppPreview/AppPreview.vue';
 import AppCloseButton from '@/components/AppCloseButton/AppCloseButton.vue';
+import AppModal from '@/components/AppModal/AppModal.vue';
 
 export default {
   name: 'EditorPage',
@@ -22,6 +24,7 @@ export default {
     AppEditor,
     AppPreview,
     AppCloseButton,
+    AppModal,
   },
   data() {
     return {

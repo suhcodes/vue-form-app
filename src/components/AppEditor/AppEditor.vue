@@ -21,7 +21,7 @@
             <span class="v-file-label">App Icon</span>
             <div class="v-mock">
               <span class="v-mock__input">{{ appIcon || 'Select a file' }}</span>
-              <span class="v-mock__btn">Select a File</span>
+              <span class="v-mock__btn btn">Select a File</span>
             </div>
           </label>
           <input

@@ -1,9 +1,9 @@
 <template>
   <div class="v-list-page">
     <AppList />
-    <button>
-      <router-link to="/">Add new</router-link>
-    </button>
+    <router-link to="/">
+      <button class="btn">Add new</button>
+    </router-link>
   </div>
 </template>
 
@@ -20,3 +20,8 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  @import '@/styles/main.scss';
+  @import './AppListPage.scss';
+</style>
