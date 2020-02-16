@@ -6,8 +6,8 @@
         <span><img v-if="appInfo.iconFile" :src="appInfo.iconFile" /></span>
       </div>
       <div class="v-preview__card__info">
-        <h3>{{ appInfo.name }}</h3>
-        <p>{{ appInfo.category }}</p>
+        <h3>{{ appInfo.name || 'App Name' }}</h3>
+        <p>{{ appInfo.category || 'Category 1' }}</p>
         <small>New App</small>
       </div>
     </div>
@@ -17,7 +17,11 @@
 
 <script>
 export default {
-  props: ['app-info'],
+  props: {
+    appInfo: {
+      type: Object,
+    },
+  },
   data() {
     return {};
   },

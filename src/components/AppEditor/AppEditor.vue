@@ -12,30 +12,44 @@
             name="appName"
             id="appName"
             placeholder="Enter App Dysplay Name"
+            maxlength="50"
             @keyup="changeAppName"
           />
         </div>
         <div class="v-editor__fieldset__input-group">
           <label for="appIcon">
             <span class="v-file-label">App Icon</span>
-            <span class="v-mock-input">{{ appIcon }}</span>
-            <span class="v-mock-btn">Select a File</span>
+            <div class="v-mock">
+              <span class="v-mock__input">{{ appIcon || 'Select a file' }}</span>
+              <span class="v-mock__btn">Select a File</span>
+            </div>
           </label>
-          <input type="file" name="appIcon" id="appIcon" @change="changeAppIcon" />
+          <input
+            type="file"
+            name="appIcon"
+            id="appIcon"
+            @change="changeAppIcon"
+          />
         </div>
         <div class="v-editor__fieldset__input-group">
           <label for="iconBackground">
             <span class="v-file-label">Icon's Background Color</span>
-            <span class="v-mock-input color-picker">Pick a Color</span>
-            <span class="v-mock-btn color-picker">{{ appBg }}</span>
+            <div class="v-mock">
+              <span class="v-mock__input color-picker">Pick a Color</span>
+              <span class="v-mock__btn color-picker">{{ appBg || '#333' }}</span>
+            </div>
           </label>
-          <input type="color" name="iconBackground" id="iconBackground" @change="changeAppBg" />
+          <input
+            type="color"
+            name="iconBackground"
+            id="iconBackground"
+            @change="changeAppBg"
+          />
         </div>
         <div class="v-editor__fieldset__input-group">
           <label for="appCategory">Select a Category</label>
           <select name="appCategory" id="appCategory" @change="changeAppCategory">
             <optgroup>
-              <option value="Default">Select</option>
               <option value="Category 1">Category 1</option>
               <option value="Category 2">Category 2</option>
               <option value="Category 3">Category 3</option>
@@ -49,32 +63,32 @@
 
 <script>
 export default {
-  props: ['app-info'],
   data() {
     return {
-      appIcon: 'Select a File',
-      appBg: '#333',
+      appIcon: '',
+      appBg: '',
+      appIconFileType: '',
     };
   },
   methods: {
     changeAppName(event) {
-      const appName = event.target.value;
-      this.$emit('changeAppName', appName);
+      this.$emit('changeAppName', event.target.value);
     },
     changeAppIcon(event) {
-      const file = event.target.files[0];
-      const appIconFile = URL.createObjectURL(file);
-      this.appIcon = file.name;
-      this.$emit('changeAppIcon', { appIconFile });
+      this.appIcon = event.target.files[0].name;
+      this.appIconFileType = event.target.files[0].type;
+      if (this.appIconFileType.indexOf('image') > -1) {
+        this.$emit('changeAppIcon', URL.createObjectURL(event.target.files[0]));
+      } else {
+        this.appIcon = 'Error: File is not an image';
+      }
     },
     changeAppBg(event) {
-      const appBg = event.target.value;
-      this.appBg = appBg;
-      this.$emit('changeAppBg', appBg);
+      this.appBg = event.target.value;
+      this.$emit('changeAppBg', event.target.value);
     },
     changeAppCategory(event) {
-      const appCategory = event.target.value;
-      this.$emit('changeAppCategory', appCategory);
+      this.$emit('changeAppCategory', event.target.value);
     },
   },
 };
