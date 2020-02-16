@@ -8,3 +8,9 @@ html {
     font-family: $primary-font;
     color: $primary-color;
 }
+
+#app {
+    padding: 1rem;
+    background-color: #eee;
+    min-height: 100vh;
+}

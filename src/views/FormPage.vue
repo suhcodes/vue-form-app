@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import AppEditor from '@/components/AppEditor';
-import AppPreview from '@/components/AppPreview';
-import CloseButton from '@/components/CloseButton';
+import AppEditor from '@/components/AppEditor/AppEditor.vue';
+import AppPreview from '@/components/AppPreview/AppPreview.vue';
+import CloseButton from '@/components/CloseButton/CloseButton.vue';
 
 export default {
   name: 'FormPage',

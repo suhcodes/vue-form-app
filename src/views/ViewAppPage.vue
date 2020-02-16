@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import AppEditor from '@/components/AppEditor';
-import AppPreview from '@/components/AppPreview';
+import AppEditor from '@/components/AppEditor/AppEditor.vue';
+import AppPreview from '@/components/AppPreview/AppPreview.vue';
 
 export default {
   name: 'ViewAppPage',

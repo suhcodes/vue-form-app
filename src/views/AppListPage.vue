@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppList from '@/components/AppList';
+import AppList from '@/components/AppList/AppList.vue';
 
 export default {
   name: 'AppListPage',
