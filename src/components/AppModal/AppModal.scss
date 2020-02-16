@@ -1,6 +1,6 @@
 .v-modal {
-  max-width: 600px;
-  margin: 7rem 1rem;
+  max-width: 90%;
+  margin: 7rem auto;
   padding: 2rem;
   background-color: $white;
   border-radius: 5px;
@@ -30,16 +30,25 @@
   &__footer {
     display: flex;
     justify-content: space-between;
-    button {
+    a {
+      display: block;
       width: 45%;
-      &.btn-cancel {
-          opacity: 1;
+      button {
+        width: 100%;
       }
+    }
+    button.btn-cancel {
+      opacity: 1;
+      width: 45%;
     }
   }
 
   @include desktop {
     margin: 7rem auto;
-    min-height: 60vh;
+    height: 40vh;
+    max-width: 40%;
+    &__body {
+      padding: 3rem 0;
+    }
   }
 }

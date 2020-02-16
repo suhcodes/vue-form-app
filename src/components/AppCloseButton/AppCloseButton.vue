@@ -1,12 +1,12 @@
 <template>
-  <button id="closeForm"><router-link to="/list">&times;</router-link></button>
+  <button id="closeForm" @click="clickedToClose">&times;</button>
 </template>
 
 <script>
 export default {
-  props: {
-    inputChecker: {
-      type: Boolean,
+  methods: {
+    clickedToClose() {
+      this.$emit('clickedToClose', true);
     },
   },
 };

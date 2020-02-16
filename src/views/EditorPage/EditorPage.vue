@@ -1,6 +1,8 @@
 <template>
   <div id="editor" class="v-editor-page">
-    <AppCloseButton />
+    <AppCloseButton
+      @clickedToClose="appModalCheck = $event"
+    />
     <AppEditor
       @changeAppName="appInfo.name = $event"
       @changeAppIcon="appInfo.iconFile = $event"
@@ -8,7 +10,11 @@
       @changeAppCategory="appInfo.category = $event"
     />
     <AppPreview :app-info="appInfo" />
-    <AppModal />
+    <AppModal
+      v-if="appModalCheck"
+      :modal-check="appModalCheck"
+      @cancelAction="appModalCheck = $event"
+    />
   </div>
 </template>
 
@@ -35,6 +41,7 @@ export default {
         category: '',
         inputChecker: false,
       },
+      appModalCheck: false,
     };
   },
   methods: {

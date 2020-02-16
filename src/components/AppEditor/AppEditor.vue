@@ -14,6 +14,7 @@
             placeholder="Enter App Dysplay Name"
             maxlength="50"
             @keyup="changeAppName"
+            @focus="floatPreview"
           />
         </div>
         <div class="v-editor__fieldset__input-group">
@@ -89,6 +90,9 @@ export default {
     },
     changeAppCategory(event) {
       this.$emit('changeAppCategory', event.target.value);
+    },
+    floatPreview() {
+      this.$emit('floatPreview', true);
     },
   },
 };
