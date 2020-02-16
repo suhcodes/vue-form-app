@@ -1,6 +1,6 @@
 <template>
   <div id="editor" class="v-editor-page">
-    <AppCloseButton :input-checker="inputChecker" />
+    <AppCloseButton />
     <AppEditor
       @changeAppName="appInfo.name = $event"
       @changeAppIcon="appInfo.iconFile = $event"
@@ -30,8 +30,8 @@ export default {
         iconFile: null,
         bg: '',
         category: '',
+        inputChecker: false,
       },
-      inputChecker: false,
     };
   },
   methods: {
