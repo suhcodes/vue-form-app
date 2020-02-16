@@ -2,8 +2,8 @@
   <div class="v-preview">
     <h2>App's Card Preview</h2>
     <div class="v-preview__card">
-      <div class="v-preview__card__img">
-        <img src alt />
+      <div class="v-preview__card__img" :style="{ backgroundColor: appInfo.bg }">
+        <span><img v-if="appInfo.iconFile" :src="appInfo.iconFile" /></span>
       </div>
       <div class="v-preview__card__info">
         <h3>{{ appInfo.name }}</h3>

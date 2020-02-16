@@ -4,5 +4,5 @@
 
 <style lang="scss">
   @import '@/styles/main.scss';
-  @import './CloseButton.scss';
+  @import './AppCloseButton.scss';
 </style>

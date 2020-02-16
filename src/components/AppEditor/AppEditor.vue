@@ -53,41 +53,28 @@ export default {
   data() {
     return {
       appIcon: 'Select a File',
-      appBg: 'Pick a Color',
+      appBg: '#333',
     };
   },
   methods: {
     changeAppName(event) {
       const appName = event.target.value;
-      // eslint-disable-next-line
-      console.log(appName);
       this.$emit('changeAppName', appName);
     },
     changeAppIcon(event) {
       const file = event.target.files[0];
-      const appIconFileType = file.type;
-      const appIcon = file.name;
       const appIconFile = URL.createObjectURL(file);
-
       this.appIcon = file.name;
-
-      // eslint-disable-next-line
-      console.log(file, appIconFileType, appIcon, appIconFile);
-      // this.$emit('changeAppIcon', {appIconFileType, appIcon, appIconFile});
+      this.$emit('changeAppIcon', { appIconFile });
     },
     changeAppBg(event) {
       const appBg = event.target.value;
-
       this.appBg = appBg;
-      // eslint-disable-next-line
-      console.log(appBg);
-      // this.$emit('changeAppBg', appBg);
+      this.$emit('changeAppBg', appBg);
     },
     changeAppCategory(event) {
       const appCategory = event.target.value;
-      // eslint-disable-next-line
-      console.log(appCategory);
-      // this.$emit('changeAppBg', appCategory);
+      this.$emit('changeAppCategory', appCategory);
     },
   },
 };
