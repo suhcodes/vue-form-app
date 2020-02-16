@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "id": 0,
+      "name": "app 1",
+      "icon": "@/assets/logo.png",
+      "category": "Category 1"
+    },
+    {
+      "id": 1,
+      "name": "app 2",
+      "icon": "@/assets/logo.png",
+      "category": "Category 2"
+    },
+    {
+      "id": 2,
+      "name": "app 3",
+      "icon": "@/assets/logo.png",
+      "category": "Category 3"
+    }
+  ]
+}
