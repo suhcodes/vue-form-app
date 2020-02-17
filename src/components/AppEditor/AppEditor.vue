@@ -37,7 +37,7 @@
             <span class="v-file-label">Icon's Background Color</span>
             <div class="v-mock">
               <span class="v-mock__input color-picker" id="appBackground">Pick a Color</span>
-              <span class="v-mock__btn color-picker">{{ appBg || '#333' }}</span>
+              <span class="v-mock__btn color-picker">{{ appBg || '...' }}</span>
             </div>
           </label>
           <input
@@ -51,6 +51,7 @@
           <label for="appCategory">Select a Category</label>
           <select name="appCategory" id="appCategory" @change="changeAppCategory">
             <optgroup>
+              <option value="Default">Select a category</option>
               <option value="Category 1">Category 1</option>
               <option value="Category 2">Category 2</option>
               <option value="Category 3">Category 3</option>

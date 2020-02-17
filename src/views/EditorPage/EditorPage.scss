@@ -6,7 +6,9 @@
   background-color: $light-gray;
   padding: 1rem;
   min-height: 100vh;
-  
+  &.v-float-preview {
+    padding-bottom: 15rem;
+  }
   @include desktop {
     flex-direction: row;
     margin: 5rem auto;
@@ -15,8 +17,8 @@
     border-radius: .5rem;
     border: 1px solid $gray;
     min-height: auto;
-  }
-  &.v-float-preview {
-    padding-bottom: 15rem;
+    &.v-float-preview {
+      padding-bottom: 1rem;
+    }
   }
 }

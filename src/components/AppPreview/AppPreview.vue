@@ -36,7 +36,7 @@ export default {
       if (!this.appInfo.name) this.alertErr('Name');
       else if (!this.appInfo.iconFile) this.alertErr('Icon');
       else if (!this.appInfo.bg) this.alertErr('Background');
-      else if (!this.appInfo.category) this.alertErr('Category');
+      else if (!this.appInfo.category || this.appInfo.category === 'Default') this.alertErr('Category');
       else this.postRequest();
     },
     alertErr(str) {

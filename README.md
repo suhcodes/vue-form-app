@@ -12,7 +12,7 @@ npm run serve
 
 ### Run json-server
 ```
-json-server public/db.json
+json-server db.json
 ```
 
 ### Compiles and minifies for production

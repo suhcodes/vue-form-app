@@ -4,23 +4,43 @@
     font-family: $secondary-font;
   }
   &__ul {
-    padding: 2rem 0;
+    padding: 0;
     overflow-y: auto;
+    max-height: calc(100vh - 6rem);
+    margin: 1rem 0;
     &__item {
-      margin: 1rem 0;
+      margin: .5rem 0;
       padding: 1rem;
       width: 100%;
       border-radius: 5px;
       border: 1px solid $gray;
       background-color: $lighter-gray;
     }
+    /* width */
   }
   @include desktop {
+    min-height: calc(100vh - 15rem);
     &__ul {
-      min-height: calc(100vh - 17rem);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      max-height: calc(100vh - 18rem);
+      padding-right: .5rem;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: $light-gray;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $gray;
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background:$dark-gray;
+      }
       &__item {
         width: calc(50% - 10px);
       }
