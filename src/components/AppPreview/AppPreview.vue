@@ -37,7 +37,7 @@ export default {
       else if (!this.appInfo.iconFile) this.alertErr('Icon');
       else if (!this.appInfo.bg) this.alertErr('Background');
       else if (!this.appInfo.category) this.alertErr('Category');
-      else this.postRequestFake();
+      else this.postRequest();
     },
     alertErr(str) {
       const el = document.getElementById(`input${str}`);
@@ -47,9 +47,6 @@ export default {
         el.classList.remove('err');
       }, 5000);
     },
-    postRequestFake() {
-      this.$emit('dataSavedSuccess', true);
-    },
     async postRequest() {
       const data = {
         name: this.appInfo.name,
@@ -58,9 +55,8 @@ export default {
         category: this.appInfo.category,
       };
       const url = 'http://localhost:3000/list';
-      const res = await axios.post(url, data).then(() => { console.log('fez post'); });
+      const res = await axios.post(url, data, (event) => { event.preventDefault(); });
       console.log(res);
-      this.$emit('dataSavedSuccess', true);
     },
   },
 };

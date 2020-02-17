@@ -2,7 +2,7 @@
   <div class="v-list">
     <h2>Welcome to your apps list!</h2>
     <ul class="v-list__ul">
-      <li class="v-list__ul-item" v-for="app in appList" :key="app.id">
+      <li class="v-list__ul__item" v-for="app in appList" :key="app.id">
         <p>{{ app.name }}</p>
       </li>
     </ul>
