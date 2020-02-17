@@ -9,6 +9,7 @@
       @changeAppBg="appInfo.bg = $event"
       @changeAppCategory="appInfo.category = $event"
       @floatPreview="floatPreview = $event"
+      @dataSavedSuccess="dataSavedModalCheck = $event"
     />
     <AppPreview
       :app-info="appInfo"
@@ -18,6 +19,7 @@
       v-if="AppExitModalCheck"
       @cancelAction="AppExitModalCheck = $event"
     />
+    <AppSuccessModal v-if="dataSavedModalCheck" />
   </div>
 </template>
 
@@ -26,6 +28,7 @@ import AppEditor from '@/components/AppEditor/AppEditor.vue';
 import AppPreview from '@/components/AppPreview/AppPreview.vue';
 import AppCloseButton from '@/components/AppCloseButton/AppCloseButton.vue';
 import AppExitModal from '@/components/AppExitModal/AppExitModal.vue';
+import AppSuccessModal from '@/components/AppSuccessModal/AppSuccessModal.vue';
 
 export default {
   name: 'EditorPage',
@@ -34,6 +37,7 @@ export default {
     AppPreview,
     AppCloseButton,
     AppExitModal,
+    AppSuccessModal,
   },
   data() {
     return {

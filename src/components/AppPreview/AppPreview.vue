@@ -56,8 +56,8 @@ export default {
       };
       const url = 'http://localhost:3000/list';
       const res = await axios.post(url, data);
-      this.$emit('dataSavedSuccess', true);
       console.log(res);
+      this.$emit('dataSavedSuccess', true);
     },
   },
 };

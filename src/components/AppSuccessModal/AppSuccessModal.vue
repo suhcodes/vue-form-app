@@ -1,0 +1,20 @@
+<template>
+  <div class="v-overlay v-show">
+    <div class="v-modal">
+      <div class="v-modal__header">
+        <router-link to="/list"><button id="closeModal">&times;</button></router-link>
+      </div>
+      <div class="v-modal__body">
+        <p>Your app has been saved!</p>
+      </div>
+      <div class="v-modal__footer">
+        <router-link to="/list"><button class="btn btn-success">Ok</button></router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+  @import '@/styles/main.scss';
+  @import './AppSuccessModal.scss';
+</style>
