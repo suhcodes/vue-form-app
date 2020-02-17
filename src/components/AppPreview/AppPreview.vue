@@ -55,8 +55,9 @@ export default {
         category: this.appInfo.category,
       };
       const url = 'http://localhost:3000/list';
-      const res = await axios.post(url, data, (event) => { event.preventDefault(); });
+      const res = await axios.post(url, data);
       console.log(res);
+      this.$emit('dataSavedSuccess', true);
     },
   },
 };

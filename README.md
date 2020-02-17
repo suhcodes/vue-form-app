@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Run json-server
+```
+json-server public/db.json
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
@@ -28,11 +33,6 @@ npm run lint
 ### Run your end-to-end tests
 ```
 npm run test:e2e
-```
-
-### Run json-server
-```
-json-server public/db.json
 ```
 
 ### Customize configuration
