@@ -9,17 +9,19 @@
       @changeAppBg="appInfo.bg = $event"
       @changeAppCategory="appInfo.category = $event"
       @floatPreview="floatPreview = $event"
-      @dataSavedSuccess="dataSavedModalCheck = $event"
     />
     <AppPreview
       :app-info="appInfo"
       :float-preview="floatPreview"
+      @dataSavedSuccess="dataSavedSuccess = $event"
     />
     <AppExitModal
       v-if="AppExitModalCheck"
       @cancelAction="AppExitModalCheck = $event"
     />
-    <AppSuccessModal v-if="dataSavedModalCheck" />
+    <AppSuccessModal
+      v-if="dataSavedSuccess"
+    />
   </div>
 </template>
 
@@ -50,7 +52,7 @@ export default {
       },
       AppExitModalCheck: false,
       floatPreview: false,
-      dataSavedModalCheck: false,
+      dataSavedSuccess: false,
     };
   },
 };
