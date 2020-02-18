@@ -4,9 +4,10 @@
     <ul class="v-list__ul" v-if="appList.length">
       <li class="v-list__ul__item"
         v-for="app in appList"
-        :key="app.id"
-        :style="{ borderColor: app.background}">
-        <p><span>{{ app.name }}</span><span>{{ app.category }}</span></p>
+        :key="app.id">
+        <router-link :to="`view/${app.id}`">
+          <p><span>{{ app.name }}</span><span>{{ app.category }}</span></p>
+        </router-link>
       </li>
     </ul>
     <p class="v-list__empty" v-if="!appList.length">Oops!<br /> You don't have any apps yet :(</p>

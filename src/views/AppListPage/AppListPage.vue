@@ -22,6 +22,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppListPage.scss';
 </style>

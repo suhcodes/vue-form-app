@@ -21,8 +21,9 @@ export default new Router({
       component: AppListPage,
     },
     {
-      path: '/view/',
+      path: '/view/:id',
       name: 'App View',
+      props: true,
       component: AppView,
     },
   ],

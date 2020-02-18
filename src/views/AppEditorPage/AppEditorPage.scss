@@ -9,6 +9,14 @@
   &.v-float-preview {
     padding-bottom: 15rem;
   }
+  .v-modal-success__footer {
+    flex-direction: column;
+    a {
+      width: 90%;
+      max-width: 400px;
+      margin-top: 1rem;
+    }
+  }
   @include desktop {
     flex-direction: row;
     margin: 5rem auto;

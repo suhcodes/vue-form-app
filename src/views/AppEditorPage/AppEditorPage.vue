@@ -1,27 +1,23 @@
 <template>
   <div id="editor" class="v-editor-page" :class="{ 'v-float-preview' : floatPreview }">
     <AppCloseButton
-      @clickedToClose="AppExitModalCheck = $event"
-    />
+      @clickedToClose="AppExitModalCheck = $event" />
     <AppEditor
       @changeAppName="appInfo.name = $event"
       @changeAppIcon="appInfo.iconFile = $event"
       @changeAppBg="appInfo.bg = $event"
       @changeAppCategory="appInfo.category = $event"
-      @floatPreview="floatPreview = $event"
-    />
+      @floatPreview="floatPreview = $event" />
     <AppPreview
       :app-info="appInfo"
       :float-preview="floatPreview"
-      @makePostRequest="postRequest()"
-    />
+      @makePostRequest="postRequest()" />
     <AppExitModal
       v-if="AppExitModalCheck"
-      @cancelAction="AppExitModalCheck = $event"
-    />
+      @cancelAction="AppExitModalCheck = $event" />
     <AppSuccessModal
       v-if="dataSavedSuccess"
-    />
+      :res-data="resData" />
   </div>
 </template>
 
@@ -54,6 +50,7 @@ export default {
       AppExitModalCheck: false,
       floatPreview: false,
       dataSavedSuccess: false,
+      resData: {},
     };
   },
   methods: {
@@ -69,6 +66,7 @@ export default {
         const res = await axios.post(url, data);
         this.appList = res.data;
         this.dataSavedSuccess = true;
+        this.resData = res.data;
       } catch (e) {
         console.error(e);
       }
@@ -78,6 +76,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppEditorPage.scss';
 </style>

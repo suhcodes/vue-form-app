@@ -20,6 +20,17 @@
       p {
         display: flex;
         justify-content: space-between;
+        span {
+          transition: 0.3s ease-in-out;
+        }
+      }
+      a {
+        color: $primary-color;
+        &:hover {
+          span {
+            opacity: 0.5;
+          }
+        }
       }
     }
   }
