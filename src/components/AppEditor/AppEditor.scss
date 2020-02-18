@@ -30,7 +30,7 @@
     display: none;
   }
   &__fieldset {
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
     &__input-group::after {
       opacity: 0;
       transition: 0.3s ease-in-out;
@@ -118,8 +118,10 @@
       border-radius: 5px;
       border: 1px solid $gray;
       margin: 1rem 0; 
+      transition: .3s ease-in-out;
       &__input,
       &__btn {
+        transition: .3s ease-in-out;
         margin: 0;
         border: none;
       }

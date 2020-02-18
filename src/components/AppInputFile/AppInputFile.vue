@@ -7,7 +7,8 @@
         :class="{ 'v-mock-dragging': isDragging}"
         @dragenter="dragEnter"
         @dragleave="dragLeave"
-        @drop="onDrop"
+        @dragover.prevent
+        @drop.prevent="onDrop"
       >
         <span class="v-mock__input">{{ appIcon || 'Select a file' }}</span>
         <span class="v-mock__btn btn">Select a File</span>
@@ -46,8 +47,11 @@ export default {
       event.preventDefault();
       this.isDragging = false;
     },
-    onDrop() {
-      console.log('dropped');
+    onDrop(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.$emit('fileUploaded', event.dataTransfer.files[0]);
+      this.isDragging = false;
     },
   },
 };
