@@ -16,5 +16,13 @@
         }
       }
     }
+    .v-warning {
+      position: relative;
+      &::after {
+        content: 'Please select only one file.';
+        opacity: 1;
+        bottom: -12px;
+      }
+    }
   }
 }

@@ -1,14 +1,18 @@
 <template>
-  <div id="inputIcon" class="v-editor__fieldset__input-group">
+  <div
+    id="inputIcon"
+    class="v-editor__fieldset__input-group"
+    :class="{ 'v-warning' : isMultipleFiles }"
+  >
     <label for="appIcon">
       <span class="v-file-label">App Icon</span>
       <div
         class="v-mock"
-        :class="{ 'v-mock-dragging': isDragging}"
+        :class="{ 'v-mock-dragging': isDragging }"
         @dragenter="dragEnter"
         @dragleave="dragLeave"
         @dragover.prevent
-        @drop.prevent="onDrop"
+        @drop="onDrop"
       >
         <span class="v-mock__input">{{ appIcon || 'Select a file' }}</span>
         <span class="v-mock__btn btn">Select a File</span>
@@ -18,7 +22,7 @@
       type="file"
       name="appIcon"
       id="appIcon"
-      @change="iconChanged"
+      @change="iconChanged($event.target.files[0])"
     />
   </div>
 </template>
@@ -33,11 +37,12 @@ export default {
   data() {
     return {
       isDragging: false,
+      isMultipleFiles: false,
     };
   },
   methods: {
-    iconChanged(event) {
-      this.$emit('fileUploaded', event.target.files[0]);
+    iconChanged(file) {
+      this.$emit('fileUploaded', file);
     },
     dragEnter(event) {
       event.preventDefault();
@@ -50,8 +55,15 @@ export default {
     onDrop(event) {
       event.preventDefault();
       event.stopPropagation();
-      this.$emit('fileUploaded', event.dataTransfer.files[0]);
       this.isDragging = false;
+      this.detectMultipleFIles(event.dataTransfer.files);
+    },
+    detectMultipleFIles(files) {
+      if (files.length === 1) this.iconChanged(files[0]);
+      else this.isMultipleFiles = true;
+      setTimeout(() => {
+        this.isMultipleFiles = false;
+      }, 5000);
     },
   },
 };
