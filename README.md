@@ -1,5 +1,25 @@
 # vue-form-app
 
+## Para rodar o projeto
+
+#### Step 1:
+```
+npm install
+```
+#### Step 2:
+```
+npm run serve
+```
+#### Step 3:
+```
+npm install json-server
+```
+#### Step 4: 
+```
+json-server db.json --port 3000
+```
+---
+
 ## Project setup
 ```
 npm install
