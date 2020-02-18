@@ -34,7 +34,7 @@ import AppExitModal from '@/components/AppExitModal/AppExitModal.vue';
 import AppSuccessModal from '@/components/AppSuccessModal/AppSuccessModal.vue';
 
 export default {
-  name: 'EditorPage',
+  name: 'AppEditorPage',
   components: {
     AppEditor,
     AppPreview,
@@ -79,5 +79,5 @@ export default {
 
 <style lang="scss">
   @import '@/styles/main.scss';
-  @import './EditorPage.scss';
+  @import './AppEditorPage.scss';
 </style>

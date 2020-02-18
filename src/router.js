@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import EditorPage from './views/EditorPage/EditorPage.vue';
+import AppEditorPage from './views/AppEditorPage/AppEditorPage.vue';
 import AppListPage from './views/AppListPage/AppListPage.vue';
+import AppView from './views/AppView/AppView.vue';
 
 Vue.use(Router);
 
@@ -12,12 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'New App',
-      component: EditorPage,
+      component: AppEditorPage,
     },
     {
       path: '/list',
       name: 'Apps List',
       component: AppListPage,
+    },
+    {
+      path: '/view/',
+      name: 'App View',
+      component: AppView,
     },
   ],
 });

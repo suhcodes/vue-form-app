@@ -14,6 +14,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'AppSuccessModal',
+};
+</script>
+
 <style lang="scss">
   @import './AppSuccessModal.scss';
 </style>

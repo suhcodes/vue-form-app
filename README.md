@@ -12,7 +12,7 @@ npm run serve
 
 ### Run json-server
 ```
-json-server db.json
+json-server db.json --port 3000
 ```
 
 ### Compiles and minifies for production
