@@ -1,7 +1,9 @@
 .v-list {
+  min-height: calc(100vh - 8rem);
   h2 {
     text-transform: uppercase;
     font-family: $secondary-font;
+    text-align: center;
   }
   &__ul {
     padding: 0;
@@ -16,7 +18,13 @@
       border: 1px solid $gray;
       background-color: $lighter-gray;
     }
-    /* width */
+  }
+  &__empty {
+    text-align: center;
+    padding: 5rem;
+    margin: auto;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   @include desktop {
     min-height: calc(100vh - 15rem);

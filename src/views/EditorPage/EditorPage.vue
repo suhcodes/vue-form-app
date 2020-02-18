@@ -13,7 +13,7 @@
     <AppPreview
       :app-info="appInfo"
       :float-preview="floatPreview"
-      @dataSavedSuccess="dataSavedSuccess = $event"
+      @makePostRequest="postRequest()"
     />
     <AppExitModal
       v-if="AppExitModalCheck"
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import AppEditor from '@/components/AppEditor/AppEditor.vue';
 import AppPreview from '@/components/AppPreview/AppPreview.vue';
 import AppCloseButton from '@/components/AppCloseButton/AppCloseButton.vue';
@@ -54,6 +55,20 @@ export default {
       floatPreview: false,
       dataSavedSuccess: false,
     };
+  },
+  methods: {
+    async postRequest() {
+      const data = {
+        name: this.appInfo.name,
+        icon: this.appInfo.iconFile,
+        background: this.appInfo.bg,
+        category: this.appInfo.category,
+      };
+      const url = 'http://localhost:3000/list';
+      const res = await axios.post(url, data);
+      this.dataSavedSuccess = true;
+      console.log(res);
+    },
   },
 };
 </script>

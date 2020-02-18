@@ -1,29 +1,11 @@
 {
   "list": [
     {
-      "id": 0,
-      "name": "app 1",
-      "icon": "@/assets/logo.png",
-      "category": "Category 1"
-    },
-    {
-      "id": 1,
-      "name": "app 2",
-      "icon": "@/assets/logo.png",
-      "category": "Category 2"
-    },
-    {
-      "id": 2,
-      "name": "app 3",
-      "icon": "@/assets/logo.png",
-      "category": "Category 3"
-    },
-    {
-      "name": "app 4",
-      "icon": "blob:http://localhost:8080/0bff15b2-5e71-4a28-9aa4-61a24507352c",
-      "background": "#ce1313",
-      "category": "Category 2",
-      "id": 3
+      "name": "My app Name new",
+      "icon": "blob:http://localhost:8080/300dbfa0-9b00-4b77-ab35-1402d3d0684e",
+      "background": "#c91212",
+      "category": "Category 1",
+      "id": 1
     }
   ]
 }

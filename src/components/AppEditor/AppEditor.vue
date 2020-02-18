@@ -14,24 +14,14 @@
             placeholder="Enter App Dysplay Name"
             maxlength="50"
             @keyup="changeAppName"
-            @focus="floatPreview"
+            @focusin="floatPreview(true)"
+            @focusout="floatPreview(false)"
           />
         </div>
-        <div class="v-editor__fieldset__input-group" id="inputIcon">
-          <label for="appIcon">
-            <span class="v-file-label">App Icon</span>
-            <div class="v-mock">
-              <span class="v-mock__input">{{ appIcon || 'Select a file' }}</span>
-              <span class="v-mock__btn btn">Select a File</span>
-            </div>
-          </label>
-          <input
-            type="file"
-            name="appIcon"
-            id="appIcon"
-            @change="changeAppIcon"
-          />
-        </div>
+        <AppInputFile
+          :app-icon="appIcon"
+          @fileUploaded="changeAppIcon($event)"
+        />
         <div class="v-editor__fieldset__input-group" id="inputBackground">
           <label for="iconBackground">
             <span class="v-file-label">Icon's Background Color</span>
@@ -64,7 +54,12 @@
 </template>
 
 <script>
+import AppInputFile from '@/components/AppInputFile/AppInputFile.vue';
+
 export default {
+  components: {
+    AppInputFile,
+  },
   data() {
     return {
       appIcon: '',
@@ -76,11 +71,11 @@ export default {
     changeAppName(event) {
       this.$emit('changeAppName', event.target.value);
     },
-    changeAppIcon(event) {
-      this.appIcon = event.target.files[0].name;
-      this.appIconFileType = event.target.files[0].type;
+    changeAppIcon(file) {
+      this.appIcon = file.name;
+      this.appIconFileType = file.type;
       if (this.appIconFileType.indexOf('image') > -1) {
-        this.$emit('changeAppIcon', URL.createObjectURL(event.target.files[0]));
+        this.$emit('changeAppIcon', URL.createObjectURL(file));
       } else {
         this.appIcon = 'Error: File is not an image';
       }
@@ -92,8 +87,8 @@ export default {
     changeAppCategory(event) {
       this.$emit('changeAppCategory', event.target.value);
     },
-    floatPreview() {
-      this.$emit('floatPreview', true);
+    floatPreview(check) {
+      this.$emit('floatPreview', check);
     },
   },
 };

@@ -7,7 +7,7 @@
       </div>
       <div class="v-preview__card__info">
         <h3>{{ appInfo.name || 'App Name' }}</h3>
-        <p>{{ appInfo.category || 'Category 1' }}</p>
+        <p>{{ appInfo.category || 'Category' }}</p>
         <small>New App</small>
       </div>
     </div>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   props: {
@@ -37,27 +36,15 @@ export default {
       else if (!this.appInfo.iconFile) this.alertErr('Icon');
       else if (!this.appInfo.bg) this.alertErr('Background');
       else if (!this.appInfo.category || this.appInfo.category === 'Default') this.alertErr('Category');
-      else this.postRequest();
+      else this.$emit('makePostRequest');
     },
     alertErr(str) {
-      const el = document.getElementById(`input${str}`);
+      const el = document.querySelector(`#input${str}`);
       el.classList.add('err');
       el.scrollIntoView();
       setTimeout(() => {
         el.classList.remove('err');
       }, 5000);
-    },
-    async postRequest() {
-      const data = {
-        name: this.appInfo.name,
-        icon: this.appInfo.iconFile,
-        background: this.appInfo.bg,
-        category: this.appInfo.category,
-      };
-      const url = 'http://localhost:3000/list';
-      const res = await axios.post(url, data);
-      console.log(res);
-      this.$emit('dataSavedSuccess', true);
     },
   },
 };
