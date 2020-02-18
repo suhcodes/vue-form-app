@@ -1,9 +1,7 @@
-@import './helpers/colors.scss';
-@import './helpers/fonts.scss';
 @import './helpers/base.scss';
 @import './helpers/reset.scss';
-@import './helpers/mixins.scss';
 
 /* IMPORT COMPONENTS */
 @import './components/buttons.scss';
 @import './components/overlay.scss';
+@import './components/transitions.scss';

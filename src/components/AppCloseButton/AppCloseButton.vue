@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'AppCloseButton',
   methods: {
     clickedToClose() {
       this.$emit('clickedToClose', true);
@@ -13,6 +14,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppCloseButton.scss';
 </style>

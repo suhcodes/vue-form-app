@@ -7,21 +7,13 @@
       <fieldset>
         <div class="v-editor__fieldset__input-group" id="inputName">
           <label for="appName">App Name</label>
-          <input
-            type="text"
-            name="appName"
-            id="appName"
-            placeholder="Enter App Dysplay Name"
+          <input type="text" name="appName" id="appName" placeholder="Enter App Display Name"
             maxlength="50"
             @keyup="changeAppName"
             @focusin="floatPreview(true)"
-            @focusout="floatPreview(false)"
-          />
+            @focusout="floatPreview(false)" />
         </div>
-        <AppInputFile
-          :app-icon="appIcon"
-          @fileUploaded="changeAppIcon($event)"
-        />
+        <AppInputFile :app-icon="appIcon" @fileUploaded="changeAppIcon($event)" />
         <div class="v-editor__fieldset__input-group" id="inputBackground">
           <label for="iconBackground">
             <span class="v-file-label">Icon's Background Color</span>
@@ -30,12 +22,7 @@
               <span class="v-mock__btn color-picker">{{ appBg || '...' }}</span>
             </div>
           </label>
-          <input
-            type="color"
-            name="iconBackground"
-            id="iconBackground"
-            @change="changeAppBg"
-          />
+          <input type="color" name="iconBackground" id="iconBackground" @change="changeAppBg" />
         </div>
         <div class="v-editor__fieldset__input-group" id="inputCategory">
           <label for="appCategory">Select a Category</label>
@@ -57,6 +44,7 @@
 import AppInputFile from '@/components/AppInputFile/AppInputFile.vue';
 
 export default {
+  name: 'AppEditor',
   components: {
     AppInputFile,
   },
@@ -74,11 +62,8 @@ export default {
     changeAppIcon(file) {
       this.appIcon = file.name;
       this.appIconFileType = file.type;
-      if (this.appIconFileType.indexOf('image') > -1) {
-        this.$emit('changeAppIcon', URL.createObjectURL(file));
-      } else {
-        this.appIcon = 'Error: File is not an image';
-      }
+      if (this.appIconFileType.indexOf('image') > -1) this.$emit('changeAppIcon', URL.createObjectURL(file));
+      else this.appIcon = 'Error: File is not an image';
     },
     changeAppBg(event) {
       this.appBg = event.target.value;
@@ -95,6 +80,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppEditor.scss';
 </style>

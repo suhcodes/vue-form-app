@@ -11,16 +11,11 @@
         <small>New App</small>
       </div>
     </div>
-    <button
-      class="btn"
-      @click="checkDataInput">
-      Save App
-    </button>
+    <button class="btn" @click="checkDataInput">Save App</button>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     appInfo: {
@@ -42,15 +37,12 @@ export default {
       const el = document.querySelector(`#input${str}`);
       el.classList.add('err');
       el.scrollIntoView();
-      setTimeout(() => {
-        el.classList.remove('err');
-      }, 5000);
+      setTimeout(() => { el.classList.remove('err'); }, 5000);
     },
   },
 };
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppPreview.scss';
 </style>

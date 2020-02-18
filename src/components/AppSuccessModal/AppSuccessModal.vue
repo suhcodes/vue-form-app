@@ -15,6 +15,5 @@
 </template>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppSuccessModal.scss';
 </style>

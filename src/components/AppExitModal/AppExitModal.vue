@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'AppExitModal',
   methods: {
     cancelAction() {
       this.$emit('cancelAction', false);
@@ -27,6 +28,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '@/styles/main.scss';
   @import './AppExitModal.scss';
 </style>
