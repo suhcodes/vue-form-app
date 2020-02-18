@@ -23,7 +23,6 @@ export default {
     try {
       const res = await axios.get('http://localhost:3000/list');
       this.appList = res.data;
-      console.log(res.data);
     } catch (e) {
       console.error(e);
     }
