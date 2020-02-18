@@ -41,7 +41,10 @@
       text-transform: none;
       letter-spacing: 0;
       right: 0;
-      bottom: .25rem;
+      bottom: 0.25rem;
+    }
+    &__input-group#inputIcon::after {
+      bottom: -12px;
     }
   }
 
