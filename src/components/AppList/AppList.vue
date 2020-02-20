@@ -1,5 +1,5 @@
 <template>
-  <div class="v-list">
+  <div class="v-list" v-show="hasLoaded">
     <h2>Apps List</h2>
     <ul class="v-list__ul" v-if="appList.length">
       <li class="v-list__ul__item"
@@ -10,7 +10,7 @@
         </router-link>
       </li>
     </ul>
-    <p class="v-list__empty" v-if="!appList.length">Oops!<br /> You don't have any apps yet :(</p>
+    <p class="v-list__empty" v-else>Oops!<br /> You don't have any apps yet :(</p>
   </div>
 </template>
 
@@ -21,12 +21,14 @@ export default {
   data() {
     return {
       appList: [],
+      hasLoaded: false,
     };
   },
   async created() {
     try {
-      const res = await axios.get('http://localhost:3000/list');
+      const res = await axios.get('http://192.168.1.3:3000/list');
       this.appList = res.data;
+      this.hasLoaded = true;
     } catch (e) {
       console.error(e);
     }

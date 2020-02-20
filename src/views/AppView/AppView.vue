@@ -31,6 +31,11 @@
           <div class="v-view__prototype-box__body-button">
             <button :style="{ backgroundColor: `${this.appData.background}99` }"></button>
           </div>
+          <div class="v-view__prototype-box__body-message">
+            <p></p>
+            <p></p>
+          </div>
+          <div class="v-view__prototype-box__body-text"></div>
         </div>
       </div>
     </div>
@@ -55,13 +60,12 @@ export default {
   },
   async created() {
     try {
-      const url = `http://localhost:3000/list/${this.id}`;
+      const url = `http://192.168.1.3:3000/list/${this.id}`;
       const res = await axios.get(url);
       this.appData.name = res.data.name;
       this.appData.background = res.data.background;
       this.appData.category = res.data.category;
       this.appData.icon = res.data.icon;
-      console.log(res.data);
     } catch (e) {
       console.error(e);
     }

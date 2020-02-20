@@ -61,7 +61,7 @@ export default {
         background: this.appInfo.bg,
         category: this.appInfo.category,
       };
-      const url = 'http://localhost:3000/list';
+      const url = 'http://192.168.1.3:3000/list';
       try {
         const res = await axios.post(url, data);
         this.appList = res.data;

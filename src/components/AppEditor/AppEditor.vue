@@ -8,6 +8,7 @@
         <div class="v-editor__fieldset__input-group" id="inputName">
           <label for="appName">App Name</label>
           <input type="text" name="appName" id="appName" placeholder="Enter App Display Name"
+            autocomplete="off"
             maxlength="50"
             @keyup="changeAppName"
             @focusin="floatPreview(true)"
