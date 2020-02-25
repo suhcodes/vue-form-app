@@ -46,3 +46,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  @import './AppPrototype.scss';
+</style>
