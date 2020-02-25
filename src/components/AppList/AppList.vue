@@ -26,7 +26,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get('http://192.168.1.3:3000/list');
+      const res = await axios.get('http://192.168.1.9:3000/list');
       this.appList = res.data;
       this.hasLoaded = true;
     } catch (e) {

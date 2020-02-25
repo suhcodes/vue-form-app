@@ -4,49 +4,19 @@
       <router-link to="/list"><span>&#8592;</span> App List</router-link>
       <router-link to="/">+ New App</router-link>
     </div>
-    <div class="v-view__prototype">
-      <div class="v-view__prototype-box">
-        <div class="v-view__prototype-box__header"
-          :style="{ backgroundColor: this.appData.background }">
-          <h1>{{ this.appData.name }}</h1>
-        </div>
-        <div class="v-view__prototype-box__body">
-          <div class="v-view__prototype-box__body-message">
-            <h2></h2>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-          <div class="v-view__prototype-box__body-list">
-            <ul>
-              <li class="v-checked"
-                :style="{ backgroundColor: `${this.appData.background}99` }"></li>
-              <li></li>
-              <li class="v-checked"
-                :style="{ backgroundColor: `${this.appData.background}99` }"></li>
-              <li></li>
-            </ul>
-          </div>
-          <div class="v-view__prototype-box__body-text"></div>
-          <div class="v-view__prototype-box__body-button">
-            <button :style="{ backgroundColor: `${this.appData.background}99` }"></button>
-          </div>
-          <div class="v-view__prototype-box__body-message">
-            <p></p>
-            <p></p>
-          </div>
-          <div class="v-view__prototype-box__body-text"></div>
-        </div>
-      </div>
-    </div>
+    <AppPrototype :app-data="appData" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import AppPrototype from '@/components/AppPrototype/AppPrototype.vue';
 
 export default {
   name: 'AppView',
+  components: {
+    AppPrototype,
+  },
   data() {
     return {
       id: this.$route.params.id,
@@ -60,7 +30,7 @@ export default {
   },
   async created() {
     try {
-      const url = `http://192.168.1.3:3000/list/${this.id}`;
+      const url = `http://192.168.1.9:3000/list/${this.id}`;
       const res = await axios.get(url);
       this.appData.name = res.data.name;
       this.appData.background = res.data.background;
