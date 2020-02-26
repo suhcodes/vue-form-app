@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 968px;
-  width: 95%;
   margin: auto;
   background-color: $light-gray;
   padding: 1rem;
@@ -20,6 +19,7 @@
     }
   }
   @include desktop {
+    width: 95%;
     flex-direction: row;
     margin: 5rem auto;
     padding: 1rem;

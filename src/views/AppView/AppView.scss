@@ -1,6 +1,5 @@
 .v-view {
   max-width: 968px;
-  width: 95%;
   margin: auto;
   padding: 1rem;
   min-height: 100vh;
@@ -23,6 +22,7 @@
   }
 
   @include desktop {
+    width: 95%;
     background-color: $light-gray;
     flex-direction: row;
     margin: 5rem auto;

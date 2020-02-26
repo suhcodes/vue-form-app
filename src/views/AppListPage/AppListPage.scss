@@ -1,11 +1,10 @@
 .v-list-page {
   max-width: 968px;
-  width: 95%;
-  margin: auto;
   background-color: $light-gray;
   padding: 1rem;
   min-height: 100vh;
   @include desktop {
+    width: 95%;
     margin: 5rem auto;
     padding: 1rem;
     position: relative;

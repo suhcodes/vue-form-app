@@ -78,6 +78,7 @@
   }
   @include desktop {
     height: calc(100vh - 17rem);
+    max-height: 40rem;
     width: 18rem;
   }
 }
