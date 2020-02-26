@@ -9,6 +9,10 @@
     a {
       color: $primary-color;
       transition: 0.3s ease-in-out;
+      padding: 10px 15px;
+      background-color: $secondary-color;
+      color: $white;
+      border-radius: 5px;
       &:hover {
         opacity: .5;
       }
