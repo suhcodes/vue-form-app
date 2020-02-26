@@ -32,10 +32,12 @@ export default {
     try {
       const url = `http://localhost:3000/list/${this.id}`;
       const res = await axios.get(url);
-      this.appData.name = res.data.name;
-      this.appData.background = res.data.background;
-      this.appData.category = res.data.category;
-      this.appData.icon = res.data.icon;
+      this.appData = {
+        name: res.data.name,
+        background: res.data.background,
+        category: res.data.category,
+        icon: res.data.icon,
+      };
     } catch (e) {
       console.error(e);
     }

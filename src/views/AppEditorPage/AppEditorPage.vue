@@ -64,9 +64,7 @@ export default {
       const url = 'http://localhost:3000/list';
       try {
         const res = await axios.post(url, data);
-        this.appList = res.data;
         this.dataSavedSuccess = true;
-        this.resData = res.data;
       } catch (e) {
         console.error(e);
       }
