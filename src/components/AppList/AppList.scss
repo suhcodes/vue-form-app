@@ -1,5 +1,8 @@
 .v-list {
   min-height: calc(100vh - 8rem);
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 15rem);
   h2 {
     text-transform: uppercase;
     font-family: $secondary-font;
@@ -61,7 +64,7 @@
     line-height: 2rem;
   }
   @include desktop {
-    min-height: calc(100vh - 15rem);
+    display: flex;
     &__ul {
       display: flex;
       flex-wrap: wrap;

@@ -3,6 +3,9 @@
   background-color: $light-gray;
   padding: 1rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @include desktop {
     width: 95%;
     margin: 5rem auto;
