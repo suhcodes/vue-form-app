@@ -30,7 +30,7 @@ export default {
   },
   async created() {
     try {
-      const url = `http://192.168.1.9:3000/list/${this.id}`;
+      const url = `http://localhost:3000/list/${this.id}`;
       const res = await axios.get(url);
       this.appData.name = res.data.name;
       this.appData.background = res.data.background;

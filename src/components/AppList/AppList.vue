@@ -28,7 +28,7 @@ export default {
   methods: {
     async clickedToRemove(id) {
       try {
-        axios.delete(`http://192.168.1.9:3000/list/${id}`);
+        axios.delete(`http://localhost:3000/list/${id}`);
         await this.getListApps();
       } catch (e) {
         console.error(e);
@@ -36,7 +36,7 @@ export default {
     },
     async getListApps() {
       try {
-        const res = await axios.get('http://192.168.1.9:3000/list');
+        const res = await axios.get('http://localhost:3000/list');
         this.appList = res.data;
         this.hasLoaded = true;
       } catch (e) {
