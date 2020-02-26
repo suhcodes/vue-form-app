@@ -1,5 +1,4 @@
 .v-list {
-  min-height: calc(100vh - 8rem);
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 15rem);
@@ -11,7 +10,7 @@
   &__ul {
     padding: 0;
     overflow-y: auto;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 7rem);
     margin: 1rem 0;
     &__item {
       margin: .5rem 0;
@@ -64,7 +63,6 @@
     line-height: 2rem;
   }
   @include desktop {
-    display: flex;
     &__ul {
       display: flex;
       flex-wrap: wrap;
